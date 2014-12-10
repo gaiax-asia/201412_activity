@@ -1,2 +1,2 @@
- what is the sum of the first 100 whole numbers?? how am i supposed to work this out efficiently?
+ what is the sum of the first 100 whole numbers?
 
