@@ -1,23 +1,30 @@
 # 5
 # 2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
 # What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
+HIGHEST_DIVISOR = 20
 
-def divisible_by_all?(x)
-  20.downto(1).each do |n|
+def lowest_divisble_by(x)
+  HIGHEST_DIVISOR.downto(1).each do |n|
     if x % n != 0
-      return false
+      return n + 1
     end
   end
-  return true
+  return 1
 end
 
-num = 2520
+num = HIGHEST_DIVISOR
+to_add = HIGHEST_DIVISOR
+current_ldb = HIGHEST_DIVISOR
 while true do
-  if divisible_by_all?(num)
+  ldb = lowest_divisble_by(num)
+  if ldb == 1
     p "Smallest number #{num}"
     break
   else
-    num = num + 2520
-    p num
+    if ldb < current_ldb
+      current_ldb = ldb
+      to_add = num
+    end
+    num = num + to_add
   end
 end
