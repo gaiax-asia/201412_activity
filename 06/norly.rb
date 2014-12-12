@@ -11,11 +11,14 @@
 #
 #
 
-n = 100
+n = 10
 sum = 0
-1.upTo(n).each do |num|
+sum_of_square = 0
+1.upto(n).each do |num|
   sum_of_square += num ** 2
-  sum +=
+  sum +=  num
 end
 
+square_of_sum = sum ** 2
+puts "#{square_of_sum - sum_of_square}"
 

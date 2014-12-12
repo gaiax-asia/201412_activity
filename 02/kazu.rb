@@ -6,9 +6,11 @@ end
 
 sum = 0
 max = 4_000_000
-2.upto(100_000_000) do |i|
+i = 2
+loop do
   fib_exe = fib(i)
   break if fib_exe > max 
   sum += fib_exe if i % 2 == 0
+  i += 1
 end
 p sum
